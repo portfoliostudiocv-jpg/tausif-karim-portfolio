@@ -12,7 +12,7 @@
 <style>
 :root{
   --navy:#0b1f3b; --navy-2:#12305a; --navy-3:#1c3a5e;
-  --gold:#c9972f; --gold-2:#e0b457;
+  --gold:#c9972f; --gold-2:#e0b457; --gold-dk:#8a6414;
   --teal:#1f7a8c;
   --ink:#16202e; --muted:#5b6778; --line:#dfe5ee;
   --bg:#ffffff; --bg-soft:#f4f6fa;
@@ -37,7 +37,11 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(11,31,59,.96);backd
 nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
 nav a{color:#cfd9e8;text-decoration:none;font-size:.9rem}
 nav a:hover{color:var(--gold-2)}
-.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer}
+.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:10px 16px;min-height:44px;font:inherit;cursor:pointer}
+nav a.nav-cta{background:var(--gold);color:var(--navy);font-weight:700;padding:8px 16px;border-radius:8px}
+nav a.nav-cta:hover{background:var(--gold-2);color:var(--navy)}
+.wa-float{display:none}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px;border-radius:6px}
 
 /* hero */
 .hero{background:radial-gradient(1200px 500px at 85% -10%,#1b4278 0,transparent 60%),linear-gradient(160deg,var(--navy) 0,#081528 100%);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden}
@@ -71,7 +75,7 @@ h1{font-family:var(--display);font-size:clamp(2.2rem,5.2vw,3.7rem);line-height:1
 /* sections */
 section{padding:84px 0}
 section.soft{background:var(--bg-soft)}
-.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:700;margin:0 0 10px}
+.kicker{color:var(--gold-dk);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:700;margin:0 0 10px}
 h2{font-family:var(--display);color:var(--navy);font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
 .sub{color:var(--muted);max-width:68ch;margin:0 0 40px;font-size:1.05rem}
 
@@ -103,7 +107,7 @@ h2{font-family:var(--display);color:var(--navy);font-size:clamp(1.7rem,3.4vw,2.4
 .tl-item:last-child{padding-bottom:0}
 .tl-item::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--gold)}
 .tl-item.now::before{background:var(--gold)}
-.when{font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}
+.when{font-size:.8rem;font-weight:700;color:var(--gold-dk);letter-spacing:.06em;text-transform:uppercase}
 .tl-item h3{margin:2px 0 2px;font-family:var(--display);color:var(--navy);font-size:1.25rem}
 .org{color:var(--muted);font-style:italic;margin:0 0 10px;font-size:.95rem}
 .tl-item ul{margin:0;padding-left:18px;color:#2c3a4d}
@@ -111,7 +115,7 @@ h2{font-family:var(--display);color:var(--navy);font-size:clamp(1.7rem,3.4vw,2.4
 
 /* impact */
 .impact{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.big{font-family:var(--display);font-size:2.4rem;color:var(--gold);line-height:1;margin:6px 0 4px}
+.big{font-family:var(--display);font-size:1.9rem;color:var(--gold-dk);line-height:1;margin:6px 0 4px}
 .impact .card h3{font-size:1.05rem}
 .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
 .compare{display:flex;align-items:center;gap:12px;margin:14px 0 10px;flex-wrap:wrap}
@@ -121,6 +125,7 @@ h2{font-family:var(--display);color:var(--navy);font-size:clamp(1.7rem,3.4vw,2.4
 /* military */
 .dark{background:linear-gradient(160deg,var(--navy) 0,#081528 100%);color:#fff}
 .dark h2{color:#fff}
+.dark .kicker,.contact .kicker{color:var(--gold-2)}
 .dark .sub{color:#b9c6d9}
 .mil-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .dcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px}
@@ -185,11 +190,13 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
   .arrow{transform:rotate(90deg);font-size:1.3rem;padding:0}
   section{padding:64px 0}
   .menu-btn{display:block}
+  .wa-float{display:inline-flex;position:fixed;right:16px;bottom:16px;z-index:60;align-items:center;gap:8px;background:#0f7a3a;color:#fff;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.35);min-height:48px}
+  nav li a.nav-cta{display:inline-block;margin-top:8px;padding:12px 18px}
   nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--navy);padding:8px 20px 16px;border-bottom:1px solid rgba(255,255,255,.1)}
   nav ul.open{display:flex}
   nav li a{display:block;padding:11px 0}
 }
-@media print{header.site,.cta,.menu-btn{display:none}.js .rv{opacity:1;transform:none}}
+@media print{header.site,.cta,.menu-btn,.wa-float{display:none!important}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -205,9 +212,10 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
         <li><a href="#translation">Translation</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#impact">Impact</a></li>
-        <li><a href="#service">Service</a></li>
+        <li><a href="#military">Military</a></li>
         <li><a href="#training">Training</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-cta" href="assets/Md_Tausif_Karim_CV.pdf" download>Download CV</a></li>
       </ul>
     </nav>
   </div>
@@ -265,7 +273,7 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
     <p class="sub">Each military discipline has a direct corporate counterpart. This is how 21 years in the Bangladesh Air Force translates into operations leadership.</p>
     <div class="mhead"><div class="a">Military foundation</div><span></span><div class="b">Corporate application</div></div>
     <div class="matrix">
-      <div class="mrow rv"><div class="cell l"><h4>Flight engineering and 109 SAR Unit</h4><p>Administration, logistics and 24/7 support facilities for 1 Squadron, 31 Squadron and the 109 Search &amp; Rescue Unit.</p></div><div class="arrow">&rarr;</div><div class="cell r"><h4>Enterprise facilities and OPEX control</h4><p>Standardising maintenance, optimising vendor costs and scaling infrastructure across multiple sites.</p></div></div>
+      <div class="mrow rv"><div class="cell l"><h4>Flight engineering and 109 SAR Unit</h4><p>Administration, logistics and 24/7 support facilities for 1 Squadron, 31 Squadron and the 109 Search &amp; Rescue Unit.</p></div><div class="arrow">&rarr;</div><div class="cell r"><h4>Enterprise facilities and OPEX control</h4><p>Standardizing maintenance, optimizing vendor costs and scaling infrastructure across multiple sites.</p></div></div>
       <div class="mrow rv"><div class="cell l"><h4>VVIP protocol and base security</h4><p>VVIP protocol and airport security duties; Unit Assistant Security Supervisor; VVIP clearance held January 2011 to June 2022.</p></div><div class="arrow">&rarr;</div><div class="cell r"><h4>C-TPAT and plant security</h4><p>Directing 284+ security personnel for secure export supply chains, with CCTV surveillance networks.</p></div></div>
       <div class="mrow rv"><div class="cell l"><h4>Dangerous Goods distinction (3 times)</h4><p>Navigating complex, high-risk international handling regulations, with a distinction in 2012, 2014 and 2020.</p></div><div class="arrow">&rarr;</div><div class="cell r"><h4>Corporate compliance, OSH and fire safety</h4><p>Safety, fire prevention and emergency logistics across 18 retail sites.</p></div></div>
     </div>
@@ -326,31 +334,31 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
   <div class="wrap">
     <p class="kicker">Impact</p>
     <h2>Results that show up in the numbers</h2>
-    <p class="sub">Three results from the corporate years, each tied to a specific role.</p>
+    <p class="sub">Three headline results from the corporate years. Full detail is in the timeline above.</p>
     <div class="impact">
       <div class="card rv">
         <span class="tag">MICLO Bangladesh</span>
         <h3>Retail footprint doubled</h3>
         <div class="compare"><span class="pill">9</span><span style="color:var(--gold);font-weight:700">&rarr;</span><span class="pill g">18 showrooms</span></div>
-        <p>Standard build-outs, maintenance routines and compliance behind a yearly turnover that moved from BDT 24 Crore to 48 Crore.</p>
+        <p>Behind a yearly turnover that rose from BDT 24 Cr to 48 Cr.</p>
       </div>
       <div class="card rv">
         <span class="tag">Liberty Knitwear</span>
         <h3>Canteen cost cut by 20%</h3>
-        <div class="big">BDT 30 &rarr; 24 Lacs</div>
-        <p>Monthly cost reduced while service was maintained for 550 staff, buyers and buyer QC representatives.</p>
+        <div class="big">30 &rarr; 24 Lacs</div>
+        <p>Service maintained for 550 staff, buyers and QC reps.</p>
       </div>
       <div class="card rv">
         <span class="tag">Liberty Knitwear</span>
         <h3>Waste fabric turned into revenue</h3>
         <div class="big">2 Cr+</div>
-        <p>Market analysis and a moderate pricing strategy lifted monthly financial impact from BDT 70-80 Lacs to over 2 Crore.</p>
+        <p>Monthly impact up from BDT 70-80 Lacs through pricing strategy.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="service" class="dark">
+<section id="military" class="dark">
   <div class="wrap">
     <p class="kicker">Bangladesh Air Force &middot; 2001&ndash;2022</p>
     <h2>The military foundation</h2>
@@ -392,9 +400,9 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
     <h2>Practical engineering under pressure</h2>
     <p class="sub">Problem-solving with local resources when the standard supply chain was not an option.</p>
     <div class="inno">
-      <div class="card rv"><div class="ico">17</div><h3>Mobile container office (2017)</h3><p>Converted an abandoned metal cargo container into a fully functional mobile office using local resources, avoiding the need for permanent infrastructure.</p></div>
-      <div class="card rv"><div class="ico">20</div><h3>COVID-19 evacuation stretchers (2020)</h3><p>Engineered and manufactured locally made patient-carrying stretchers for safe medical evacuation when standard supply chains failed.</p></div>
-      <div class="card rv"><div class="ico">NV</div><h3>NVG landing &lsquo;T&rsquo;</h3><p>Built a localised Landing &lsquo;T&rsquo; to enable night-time helicopter landings using Night Vision Goggles, expanding operational capability.</p></div>
+      <div class="card rv"><span class="tag">2017</span><h3>Mobile container office</h3><p>Converted an abandoned metal cargo container into a fully functional mobile office using local resources, avoiding the need for permanent infrastructure.</p></div>
+      <div class="card rv"><span class="tag">2020</span><h3>COVID-19 evacuation stretchers</h3><p>Engineered and manufactured locally made patient-carrying stretchers for safe medical evacuation when standard supply chains failed.</p></div>
+      <div class="card rv"><span class="tag">Night operations</span><h3>NVG landing &lsquo;T&rsquo;</h3><p>Built a localized Landing &lsquo;T&rsquo; to enable night-time helicopter landings using Night Vision Goggles, expanding operational capability.</p></div>
     </div>
   </div>
 </section>
@@ -402,7 +410,7 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
 <section id="training" class="soft">
   <div class="wrap">
     <p class="kicker">Certifications and training</p>
-    <h2>Specialised training and regulatory mastery</h2>
+    <h2>Specialized training and regulatory mastery</h2>
     <p class="sub">Regulated-environment training from aviation, safety and supply-chain security.</p>
     <div class="tablewrap rv">
       <table>
@@ -476,6 +484,7 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
 </section>
 </main>
 
+<a class="wa-float" href="https://wa.me/8801678052767" target="_blank" rel="noopener" aria-label="Message Tausif Karim on WhatsApp">WhatsApp</a>
 <footer><div class="wrap">&copy; 2026 Md. Tausif Karim</div></footer>
 
 <script>
