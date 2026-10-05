@@ -127,6 +127,15 @@ h2{font-family:var(--display);color:var(--navy);font-size:clamp(1.7rem,3.4vw,2.4
 .dark h2{color:#fff}
 .dark .kicker,.contact .kicker{color:var(--gold-2)}
 .dark .sub{color:#b9c6d9}
+.heli{margin:0 0 32px;border:1px solid rgba(224,180,87,.28);border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(180deg,#0e2a4f 0,#0b1f3b 60%,#081528 100%)}
+.heli svg{display:block;width:100%;height:auto}
+.heli figcaption{position:absolute;left:20px;bottom:14px;right:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-2)}
+.heli figcaption span:last-child{color:#b9c6d9}
+.heli .ship{animation:hover 6s ease-in-out infinite}
+@keyframes hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.heli .ship{animation:none}}
+@media (max-width:900px){.heli figcaption{position:static;padding:10px 16px 14px}.heli svg{min-height:170px}}
+
 .mil-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .dcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px}
 .dcard h3{margin:0 0 10px;font-family:var(--display);color:var(--gold-2);font-size:1.1rem}
@@ -363,6 +372,35 @@ footer{background:#06101f;color:#8d9bb0;text-align:center;padding:22px 0;font-si
     <p class="kicker">Bangladesh Air Force &middot; 2001&ndash;2022</p>
     <h2>The military foundation</h2>
     <p class="sub">Twenty-one years of service, three UN peacekeeping deployments and a decade of VVIP security clearance. This is where the operating discipline comes from.</p>
+    <figure class="heli rv" role="img" aria-label="Illustration of a Mil Mi-17 transport helicopter in flight over layered ridgelines">
+      <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="930" cy="190" r="70" fill="#e0b457" opacity=".10"/>
+        <circle cx="930" cy="190" r="42" fill="#e0b457" opacity=".14"/>
+        <path d="M0 250 Q150 205 300 232 T600 220 T900 238 T1200 215 V300 H0Z" fill="#0f2747"/>
+        <path d="M0 272 Q200 240 420 262 T820 252 T1200 262 V300 H0Z" fill="#0a1a33"/>
+        <g stroke="#e0b457" stroke-opacity=".18" stroke-width="1"><path d="M40 60h160M980 80h180M120 118h110M1010 130h120"/></g>
+        <g class="ship" transform="translate(300 62) scale(.95)">
+          <ellipse cx="336" cy="27" rx="330" ry="8" fill="#e0b457" opacity=".10"/>
+          <path d="M6 27 L666 27" stroke="#e0b457" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+          <rect x="331" y="28" width="10" height="20" fill="#e0b457"/>
+          <path d="M255 62 Q258 44 285 44 H395 Q420 44 424 62 Z" fill="#16345f" stroke="#e0b457" stroke-width="2"/>
+          <path d="M120 78 L-22 86 L-22 100 L130 120 Z" fill="#16345f" stroke="#e0b457" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M-22 86 L-36 40 L-14 40 L10 84 Z" fill="#16345f" stroke="#e0b457" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="-26" cy="66" r="20" fill="none" stroke="#e0b457" stroke-width="1.5" opacity=".7"/>
+          <path d="M58 94 L100 70 Q150 60 300 60 L430 62 Q500 64 536 94 Q562 114 550 130 L522 144 L122 144 Q92 142 60 122 Z" fill="#16345f" stroke="#e0b457" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M492 78 L530 92 L522 106 L480 106 Z" fill="#e0b457" opacity=".9"/>
+          <rect x="330" y="86" width="22" height="16" rx="4" fill="#e0b457" opacity=".8"/>
+          <rect x="362" y="86" width="22" height="16" rx="4" fill="#e0b457" opacity=".8"/>
+          <rect x="394" y="86" width="22" height="16" rx="4" fill="#e0b457" opacity=".8"/>
+          <rect x="196" y="76" width="92" height="58" rx="4" fill="none" stroke="#e0b457" stroke-width="1.5" opacity=".6"/>
+          <path d="M122 110 H520" stroke="#e0b457" stroke-width="1" opacity=".35"/>
+          <path d="M200 144 V160 M470 144 V158" stroke="#e0b457" stroke-width="3"/>
+          <circle cx="200" cy="168" r="9" fill="#0b1f3b" stroke="#e0b457" stroke-width="2.4"/>
+          <circle cx="470" cy="166" r="8" fill="#0b1f3b" stroke="#e0b457" stroke-width="2.4"/>
+        </g>
+      </svg>
+      <figcaption><span>Mil Mi-17 &middot; Operational Flight Engineer</span><span>MONUSCO &middot; MINUSCA</span></figcaption>
+    </figure>
     <div class="mil-stats">
       <div><b>21</b><span>Years of defence service</span></div>
       <div><b>3</b><span>UN deployments</span></div>
